@@ -1,0 +1,24 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.sty
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Large model/data files
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+
+# Environment
+.env
