@@ -18,7 +18,7 @@
 \usepackage{enumitem}
 
 % natbib is loaded automatically by neurips_2025.sty
-% Use author-year citations (plainnat style)
+% Use author-year citations (abbrvnat = abbreviated names, standard NeurIPS style)
 
 \title{Scale-Dependent Regularization from Quantization\\
        in Low-Data LoRA Fine-Tuning}
@@ -367,7 +367,9 @@ becomes substantially clearer at 7B.
 Table~\ref{tab:main_7b} reports test loss for Mistral-7B-v0.1 (4 runs per cell:
 2 LoRA ranks $\times$ 2 seeds). The precision ordering is \emph{reversed} relative
 to TinyLlama: \textbf{8-bit achieves the lowest test loss at every data size},
-outperforming FP16 by a margin that grows monotonically with $n$. 4-bit NF4 hurts
+outperforming FP16 at all four data sizes with the margin substantially larger at
+$n \in \{1000, 5000\}$ ($\Delta \approx -0.016$ and $-0.021$) than at
+$n \in \{100, 500\}$ ($\Delta \approx -0.006$ and $-0.005$). 4-bit NF4 hurts
 at $n \leq 500$ but approaches FP16 at $n=5000$ ($\Delta = -0.0005$ NLL,
 essentially tied), indicating that with sufficient data the LoRA adapter partially
 compensates for the base model's information loss.
@@ -384,9 +386,9 @@ compensates for the base model's information loss.
     \toprule
     \textbf{Precision} & $n=100$ & $n=500$ & $n=1000$ & $n=5000$ \\
     \midrule
-    FP16      & $1.3068 \pm 0.0129$ & $1.3095 \pm 0.0050$ & $1.3216 \pm 0.0359$ & $1.2742 \pm 0.0145$ \\
-    \textbf{8-bit} & $\mathbf{1.3006 \pm 0.0071}$ & $\mathbf{1.3045 \pm 0.0072}$ & $\mathbf{1.3057 \pm 0.0113}$ & $\mathbf{1.2536 \pm 0.0118}$ \\
-    4-bit NF4 & $1.3219 \pm 0.0163$ & $1.3291 \pm 0.0098$ & $1.3284 \pm 0.0099$ & $1.2737 \pm 0.0175$ \\
+    FP16      & $1.3068 \pm 0.0129$ & $1.3095 \pm 0.0050$ & $1.3216 \pm 0.0365$ & $1.2742 \pm 0.0171$ \\
+    \textbf{8-bit} & $\mathbf{1.3006 \pm 0.0071}$ & $\mathbf{1.3045 \pm 0.0072}$ & $\mathbf{1.3057 \pm 0.0364}$ & $\mathbf{1.2536 \pm 0.0094}$ \\
+    4-bit NF4 & $1.3219 \pm 0.0163$ & $1.3291 \pm 0.0098$ & $1.3284 \pm 0.0251$ & $1.2737 \pm 0.0218$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -400,13 +402,14 @@ from beneficial capacity reduction to harmful information loss.
 
 \paragraph{H2 inverted: growing benefit with data.}
 H2 predicted the regularization benefit would \emph{diminish} as $n$ grows.
-For 8-bit at Mistral-7B the opposite is observed: the improvement over FP16
-grows from $0.006$ at $n=100$ to $0.021$ at $n=5000$. This is consistent with a
-loss-landscape smoothing mechanism~\citep{askarihemmat2024quantization}: with more
-data, optimization runs longer and the FP16 model reaches sharper minima; the
-8-bit model, unable to reach such sharp minima, settles in flatter regions that
-generalize better. Figure~\ref{fig:val_loss_7b} illustrates this crossing and the
-growing gap.
+For 8-bit at Mistral-7B the opposite is observed: the improvement over FP16 is
+$0.006$ at $n=100$, dips slightly to $0.005$ at $n=500$, then grows substantially
+to $0.016$ at $n=1000$ and $0.021$ at $n=5000$. The overall trend strongly
+contradicts H2. This is consistent with a loss-landscape smoothing
+mechanism~\citep{askarihemmat2024quantization}: with more data, optimization runs
+longer and the FP16 model reaches sharper minima; the 8-bit model, unable to reach
+such sharp minima, settles in flatter regions that generalize better.
+Figure~\ref{fig:val_loss_7b} illustrates this crossing and the growing gap.
 
 \paragraph{H3 strongly supported at 7B.}
 The rank-interaction hypothesis is clearly supported at 7B. The mean 4-bit penalty
@@ -539,7 +542,7 @@ Datasets libraries for making this work accessible.
 % -----------------------------------------------------------------------
 % References
 % -----------------------------------------------------------------------
-\bibliographystyle{plainnat}
+\bibliographystyle{abbrvnat}
 \bibliography{references}
 
 % -----------------------------------------------------------------------

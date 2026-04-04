@@ -1,0 +1,63 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[AskariHemmat et~al.(2024)AskariHemmat, Jeddi, Askari~Hemmat,
+  Lazarevich, Hoffman, Sah, Saboori, Savaria, and
+  David]{askarihemmat2024quantization}
+M.~AskariHemmat, A.~Jeddi, R.~Askari~Hemmat, I.~Lazarevich, A.~Hoffman, S.~Sah,
+  E.~Saboori, Y.~Savaria, and J.-P. David.
+\newblock Quantization and generalization behavior in large models.
+\newblock \emph{arXiv preprint arXiv:2404.11769}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2404.11769}.
+
+\bibitem[Dettmers et~al.(2022)Dettmers, Lewis, Belkada, and
+  Zettlemoyer]{dettmers2022llmint8}
+T.~Dettmers, M.~Lewis, Y.~Belkada, and L.~Zettlemoyer.
+\newblock {LLM.int8()}: 8-bit matrix multiplication for transformers at scale.
+\newblock \emph{arXiv preprint arXiv:2208.07339}, 2022.
+\newblock URL \url{https://arxiv.org/abs/2208.07339}.
+
+\bibitem[Dettmers et~al.(2023)Dettmers, Pagnoni, Holtzman, and
+  Zettlemoyer]{dettmers2023qlora}
+T.~Dettmers, A.~Pagnoni, A.~Holtzman, and L.~Zettlemoyer.
+\newblock {QLoRA}: Efficient finetuning of quantized {LLM}s.
+\newblock \emph{arXiv preprint arXiv:2305.14314}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2305.14314}.
+
+\bibitem[Hu et~al.(2021)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and
+  Chen]{hu2021lora}
+E.~J. Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang, and
+  W.~Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock \emph{arXiv preprint arXiv:2106.09685}, 2021.
+\newblock URL \url{https://arxiv.org/abs/2106.09685}.
+
+\bibitem[Jiang et~al.(2023)Jiang, Sablayrolles, Mensch, Bamford, Chaplot,
+  de~las Casas, Bressand, Lengyel, Lample, Saulnier, Lavaud, Lachaux, Stock,
+  Scao, Lavril, Wang, Lacroix, and El~Sayed]{jiang2023mistral}
+A.~Q. Jiang, A.~Sablayrolles, A.~Mensch, C.~Bamford, D.~S. Chaplot, D.~de~las
+  Casas, F.~Bressand, G.~Lengyel, G.~Lample, L.~Saulnier, L.~R. Lavaud, M.-A.
+  Lachaux, P.~Stock, T.~L. Scao, T.~Lavril, J.~Wang, T.~Lacroix, and
+  W.~El~Sayed.
+\newblock Mistral {7B}.
+\newblock \emph{arXiv preprint arXiv:2310.06825}, 2023.
+\newblock URL \url{https://arxiv.org/abs/2310.06825}.
+
+\bibitem[Taori et~al.(2023)Taori, Gulrajani, Zhang, Dubois, Li, Guestrin,
+  Liang, and Hashimoto]{taori2023alpaca}
+R.~Taori, I.~Gulrajani, T.~Zhang, Y.~Dubois, X.~Li, C.~Guestrin, P.~Liang, and
+  T.~B. Hashimoto.
+\newblock Stanford {Alpaca}: An instruction-following {LLaMA} model.
+\newblock \url{https://github.com/tatsu-lab/stanford_alpaca}, 2023.
+
+\bibitem[Zhang et~al.(2024)Zhang, Zeng, Wang, and Lu]{zhang2024tinyllama}
+P.~Zhang, G.~Zeng, T.~Wang, and W.~Lu.
+\newblock {TinyLlama}: An open-source small language model.
+\newblock \emph{arXiv preprint arXiv:2401.02385}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2401.02385}.
+
+\end{thebibliography}
